@@ -1,0 +1,40 @@
+{
+  "public/fonts/DINPro-Bold.woff": {
+    "file": "assets/DINPro-Bold-Dmsx1o8R.woff",
+    "src": "public/fonts/DINPro-Bold.woff"
+  },
+  "public/fonts/DINPro-Light.woff": {
+    "file": "assets/DINPro-Light-BmHgo0qL.woff",
+    "src": "public/fonts/DINPro-Light.woff"
+  },
+  "public/fonts/DINPro-Medium.woff": {
+    "file": "assets/DINPro-Medium-V9NUCcQ0.woff",
+    "src": "public/fonts/DINPro-Medium.woff"
+  },
+  "public/fonts/DINPro.woff": {
+    "file": "assets/DINPro-VToQ1G2z.woff",
+    "src": "public/fonts/DINPro.woff"
+  },
+  "public/images/index-vitrin.bg.svg": {
+    "file": "assets/index-vitrin.bg-Rum14c9k.svg",
+    "src": "public/images/index-vitrin.bg.svg"
+  },
+  "public/images/spiral.bg.png": {
+    "file": "assets/spiral.bg-D1dYC95P.png",
+    "src": "public/images/spiral.bg.png"
+  },
+  "resources/css/main.css": {
+    "file": "assets/main-DXpYDysC.css",
+    "src": "resources/css/main.css",
+    "isEntry": true,
+    "names": [
+      "main.css"
+    ]
+  },
+  "resources/js/main.js": {
+    "file": "assets/main-CwOXC9rz.js",
+    "name": "main",
+    "src": "resources/js/main.js",
+    "isEntry": true
+  }
+}

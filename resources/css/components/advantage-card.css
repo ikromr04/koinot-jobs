@@ -1,0 +1,33 @@
+.advantage-card {
+  @apply flex flex-col bg-white border border-black/10 p-2 rounded-[16px];
+  @apply md:p-6;
+}
+
+.advantage-card__image {
+  @apply flex w-full aspect-[324/216] rounded-[12px] object-cover;
+  @apply md:mb-5;
+}
+
+.advantage-card__inner {
+  @apply p-3;
+  @apply md:p-0;
+}
+
+.advantage-card__title {
+  @apply mt-0 mb-4 font-bold text-[16px] text-[#05264E];
+  @apply md:text-[20px] md:mb-5;
+}
+
+.advantage-card__time {
+  @apply flex items-center gap-1 w-max text-[#05264E] font-medium mb-5;
+  @apply md:text-[18px] md:mb-6;
+}
+
+.advantage-card__description {
+  @apply mt-0 border-t border-black/10 pt-4 text-[#757F95] mb-4;
+}
+
+.advantage-card__link {
+  @apply flex justify-center items-center px-6 font-medium min-h-10 text-white bg-primary text-[13px] rounded-full w-max;
+  @apply md:min-h-12 md:text-[16px] md:leading-none;
+}

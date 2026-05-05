@@ -1,0 +1,28 @@
+.stats {
+  @apply bg-primary text-white rounded-[8px] pt-2 pb-4 px-4 w-max;
+  @apply md:py-9 md:w-[90vw] md:max-w-[1280px] md:rounded-[32px];
+}
+
+.stats__info {
+  @apply mt-0 mb-2 font-bold text-[14px] text-center;
+  @apply md:text-[33px];
+}
+
+.stats__details {
+  @apply flex flex-wrap justify-center gap-4 m-0;
+  @apply md:w-full md:justify-evenly;
+
+  div {
+    @apply flex flex-col-reverse;
+
+    dt {
+      @apply text-[10px];
+      @apply md:text-[23px];
+    }
+
+    dd {
+      @apply m-0 text-[32px] font-semibold;
+      @apply md:text-[120px];
+    }
+  }
+}

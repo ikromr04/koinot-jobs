@@ -1,0 +1,7 @@
+.vacancy {
+  @apply flex flex-col my-14;
+}
+
+.vacancy__title {
+  @apply text-left;
+}

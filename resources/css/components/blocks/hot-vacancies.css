@@ -1,0 +1,31 @@
+.hot-vacancies {
+  @apply flex flex-col;
+}
+
+.hot-vacancies__list {
+  @apply flex flex-col p-0 gap-4 list-none m-0;
+  @apply md:grid md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] md:auto-rows-fr;
+  @apply xl:grid-cols-4;
+}
+
+.hot-vacancies__item {
+  @apply flex;
+
+  .vacancy-card {
+    @apply w-full;
+  }
+}
+
+.hot-vacancies__button {
+  @apply flex justify-center items-center no-underline bg-primary text-white min-h-[60px] rounded-[12px] cursor-pointer w-full;
+  @apply md:text-[25px] md:flex-col md:justify-evenly md:px-[64px] md:hover:shadow-none md:duration-150;
+
+  box-shadow: 0 0 8px rgba(0, 0, 0, 20%);
+
+  @media (min-width: 768px) {
+    &::after {
+      content: attr(data-label);
+      @apply flex justify-center items-center text-[16px] border border-white rounded-[6px] h-14 w-full max-w-[400px];
+    }
+  }
+}

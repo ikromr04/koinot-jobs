@@ -1,0 +1,23 @@
+.category {
+  @apply flex flex-col;
+}
+
+.category__breadcrumbs {
+  @apply my-4;
+  @apply md:mt-10;
+}
+
+.category__title {
+  @apply text-left mb-4 text-[22px];
+  @apply md:text-[38px] md:mb-8;
+}
+
+.category__search {
+  @apply mb-6;
+  @apply md:mb-10;
+}
+
+.category__list {
+  @apply flex flex-col gap-4 list-none p-0 m-0 mb-10;
+  @apply md:mb-[140px];
+}

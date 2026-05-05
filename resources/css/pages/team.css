@@ -1,0 +1,22 @@
+.team {
+  @apply flex flex-col pt-14;
+}
+
+.team__title {
+  @apply text-left text-[40px];
+  @apply md:mb-4;
+}
+
+.team__search {
+  @apply md:-order-1 md:mb-12;
+}
+
+.team__desc {
+  @apply mb-12;
+  @apply md:mt-0;
+}
+
+.team__list {
+  @apply grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8 list-none p-0 m-0 mb-[64px];
+  @apply md:gap-14;
+}

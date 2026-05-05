@@ -1,0 +1,27 @@
+.pagination {
+  @apply flex flex-wrap items-center gap-1 list-none p-0 m-0;
+}
+
+.pagination__item {
+  &.pagination__item--dots {
+    @apply flex justify-center items-center bg-[#F7F8F9] font-medium text-[#73787D] no-underline min-w-10 min-h-10 rounded-lg;
+  }
+}
+
+.pagination__link {
+  @apply flex justify-center items-center font-medium leading-none bg-white text-[#73787D] no-underline min-w-10 min-h-10 rounded-lg;
+
+  &.pagination__link--current {
+    @apply bg-primary text-white;
+  }
+
+  &.pagination__link--disabled {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+.pagination__icon {
+  &.pagination__icon--prev {
+    @apply rotate-180;
+  }
+}

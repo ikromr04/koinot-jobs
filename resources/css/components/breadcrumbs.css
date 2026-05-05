@@ -1,0 +1,13 @@
+.breadcrumbs {
+  @apply flex flex-wrap items-center gap-2 list-none p-0 m-0 text-[#73787D];
+}
+
+.breadcrumbs__link {
+  @apply flex items-baseline gap-2 no-underline text-inherit;
+}
+
+.breadcrumbs__item {
+  &:last-child {
+    @apply opacity-50;
+  }
+}

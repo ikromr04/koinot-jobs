@@ -1,0 +1,11 @@
+.socials {
+  @apply flex list-none p-0 m-0 gap-4;
+}
+
+.socials__item {
+  @apply flex;
+}
+
+.socials__link {
+  @apply flex justify-center items-center min-w-[38px] min-h-[38px] rounded-full bg-white text-primary;
+}

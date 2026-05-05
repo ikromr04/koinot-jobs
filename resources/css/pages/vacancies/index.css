@@ -1,0 +1,92 @@
+.vacancies {
+  @apply flex flex-col;
+}
+
+.vacancies__title {
+  @apply text-left my-4 text-[22px];
+  @apply md:text-[38px] md:mt-16 md:mb-8;
+}
+
+.vacancies__search {
+  @apply mb-6;
+  @apply md:mb-10;
+}
+
+.vacancies__inner {
+  @apply flex flex-col mb-10 gap-6;
+  @apply md:grid md:grid-cols-[3fr_1fr];
+}
+
+.vacancies__list {
+  @apply flex flex-col gap-4 list-none p-0 m-0;
+}
+
+.vacancies__item {
+  @apply flex;
+}
+
+.vacancies__link {
+  @apply flex flex-col w-full py-4 px-6 no-underline text-inherit rounded-[16px] border border-[#C4C9CE];
+}
+
+.vacancies__logo {
+  @apply flex w-[92px] h-6 object-contain ml-auto mb-2;
+}
+
+.vacancies__heading {
+  @apply text-[18px];
+  @apply md:text-[22px];
+
+  * {
+    @apply inline-flex m-0 leading-[1.2] text-[18px];
+    @apply md:text-[22px];
+  }
+}
+
+.vacancies__desc {
+  @apply my-4;
+}
+
+.vacancies__city {
+  @apply flex items-center gap-2 ml-auto my-0 text-[#73787D] text-sm;
+
+  svg {
+    @apply text-primary;
+  }
+}
+
+.vacancies__pagination {
+  @apply flex justify-center mt-10;
+}
+
+.vacancies__filter {
+  @apply bg-primary/5 rounded-[16px] py-5 px-6;
+
+  h2 {
+    @apply text-left my-4 text-[22px] mt-0 mb-6;
+  }
+
+  form {
+    @apply flex flex-col;
+
+    [name="city"] {
+      @apply flex h-14 rounded-[6px] border border-[#C4C9CE] text-[16px] p-4 mb-10;
+    }
+
+    fieldset {
+      @apply flex flex-col border-0 m-0 p-0 min-w-0 mb-6;
+
+      legend {
+        @apply flex uppercase text-[#73787D] mb-4;
+      }
+
+      ul {
+        @apply flex flex-col p-0 m-0 list-none max-h-[300px] overflow-auto;
+
+        li {
+          @apply px-4 py-2;
+        }
+      }
+    }
+  }
+}

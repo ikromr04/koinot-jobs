@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="4391" fill="none" viewBox="0 0 1440 4391">
+  <g clip-path="url(#a)">
+    <path fill="#f3f4f6" d="M0 0h1440v4391H0z"/>
+    <g filter="url(#b)">
+      <path stroke="url(#c)" stroke-opacity=".35" stroke-width="160" d="M-480 2795.69c172.792 99.57 267.955 84.2 434.449-92.97 0 0 182.204-254.41 742.522-533.32 560.319-278.9 913.049 0 283.204 458.85 0 0 .507 81.97-283.204 167.44s-382.173 260.41 0 260.41l332.439-41.99c292.33-51.27 390.87 7.63 410.59 321.89"/>
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="c" x1="1440" x2="970.948" y1="1997.89" y2="3649.99" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dd5d79"/>
+      <stop offset=".25" stop-color="#a7b4d7"/>
+      <stop offset=".349" stop-color="#b3daea"/>
+      <stop offset=".409" stop-color="#50628f"/>
+      <stop offset=".48" stop-color="#6e5fa1"/>
+      <stop offset=".557" stop-color="#dea6a4"/>
+      <stop offset=".65" stop-color="#8878be"/>
+      <stop offset=".727" stop-color="#d48e92"/>
+      <stop offset=".812" stop-color="#d497bf"/>
+      <stop offset=".875" stop-color="#cab0dc"/>
+      <stop offset=".926" stop-color="#7cd4ff"/>
+      <stop offset=".959" stop-color="#c0afdf"/>
+      <stop offset="1" stop-color="#9f97c9"/>
+      <stop offset="1" stop-color="#cca1ce"/>
+      <stop offset="1" stop-color="#8dcae8"/>
+    </linearGradient>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h1440v4391H0z"/>
+    </clipPath>
+    <filter id="b" width="2327.98" height="1651.2" x="-664.041" y="1833.91" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur result="effect1_foregroundBlur_72_547" stdDeviation="72.05"/>
+    </filter>
+  </defs>
+</svg>

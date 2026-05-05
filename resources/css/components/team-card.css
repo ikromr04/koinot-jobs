@@ -1,0 +1,18 @@
+.team-card {
+  @apply flex flex-col;
+}
+
+.team-card__image {
+  @apply flex w-full aspect-[388/356] rounded-[10px] object-cover mb-3;
+  @apply md:mb-5;
+}
+
+.team-card__title {
+  @apply mt-0 mb-2 text-[22px];
+  @apply md:mb-5 md:text-[26px];
+}
+
+.team-card__desc {
+  @apply m-0 text-[#757F95];
+  @apply md:text-[18px];
+}

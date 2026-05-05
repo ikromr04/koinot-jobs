@@ -1,0 +1,38 @@
+.index {
+  @apply flex flex-col;
+}
+
+.index__vitrin {
+  @apply flex flex-col mt-[-50px] mb-14 pt-[50px] bg-[url(/public/images/index-vitrin.bg.svg)];
+  @apply md:mt-[-134px] md:pt-[134px] md:mb-[120px];
+
+  &>p:first-of-type {
+    @apply order-1 mt-14 mb-5 text-[28px] font-bold text-center leading-none;
+    @apply md:order-none md:mb-0 md:mt-[200px] md:text-[33px] md:text-primary md:leading-[1.4];
+
+    span {
+      @apply text-primary;
+    }
+  }
+
+  &>p:last-of-type {
+    @apply order-3 mt-14 mb-0 text-[18px] font-bold text-center;
+    @apply md:order-none md:mt-0 md:max-w-[800px] md:mb-12 md:text-[36px] md:font-medium;
+  }
+}
+
+.index__search {
+  @apply order-2 flex justify-center;
+  @apply md:order-none md:bg-[#FDFDFD]/80 md:rounded-[24px] md:p-4 md:mb-[260px] md:max-w-max;
+
+  @media (min-width: 768px) {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 10%);
+  }
+}
+
+.index__vacancies,
+.index__categories,
+.index__stats,
+.index__advantages {
+  @apply mb-14;
+}

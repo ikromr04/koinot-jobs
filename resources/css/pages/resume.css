@@ -1,0 +1,4 @@
+.resume {
+  @apply flex flex-col my-10;
+  @apply md:my-[120px];
+}

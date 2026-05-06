@@ -13,6 +13,7 @@
     <link href="{{ asset('favicons/180x180.png') }}" rel="apple-touch-icon">
     <link href="{{ asset('manifest.webmanifest') }}" rel="manifest">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+
     @vite('resources/css/main.css')
   </head>
 

@@ -24,15 +24,16 @@
     "src": "public/images/spiral.bg.png"
   },
   "resources/css/main.css": {
-    "file": "assets/main-DXpYDysC.css",
+    "file": "assets/main-CGYwMd_w.css",
     "src": "resources/css/main.css",
     "isEntry": true,
+    "name": "main",
     "names": [
       "main.css"
     ]
   },
   "resources/js/main.js": {
-    "file": "assets/main-CwOXC9rz.js",
+    "file": "assets/main-BP1AcZUv.js",
     "name": "main",
     "src": "resources/js/main.js",
     "isEntry": true

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix(parseLocale())->group(function () {
   Route::get('/', [PageController::class, 'index'])->name('pages.index');
   Route::get('/team', [PageController::class, 'team'])->name('pages.team');
+  Route::get('/news', [PageController::class, 'news'])->name('pages.news');
   Route::get('/resume', [PageController::class, 'resume'])->name('pages.resume');
   Route::get('/vacancies', [PageController::class, 'vacancies'])->name('pages.vacancies');
   Route::get('/vacancies/{vacancy}', [PageController::class, 'vacancy'])->name('pages.vacancy');

@@ -4,7 +4,7 @@ if (formEl) {
   const fileEl = formEl.querySelector('[type="file"]');
   const submitEl = formEl.querySelector('[type="submit"]');
 
-  fileEl.addEventListener('change', (evt) => {
+  fileEl?.addEventListener('change', (evt) => {
     const spanEl = evt.target.previousElementSibling.querySelector('span');
     const file = evt.target.files[0];
 

@@ -9,19 +9,19 @@
     <div class="vacancies__inner">
       <div>
         <ul class="vacancies__list">
-          @foreach ($data->vacancies as $vacancy)
+          @foreach ($vacancies as $vacancy)
             <li class="vacancies__item">
               <a class="vacancies__link" href="{{ route('pages.vacancy', $vacancy->id) }}">
-                <img class="vacancies__logo" src="{{ asset($vacancy->company?->logo) }}" alt="{{ $vacancy->company?->title }}">
+                <img class="vacancies__logo" src="{{ asset($vacancy->company->translation->logo) }}" alt="{{ $vacancy->company->translation->title }}">
 
-                <div class="vacancies__heading">{!! $vacancy->title !!}</div>
-                <div class="vacancies__desc">{{ preg_replace('/[^\p{L}\p{N}\s\.,!?-]/u', '', strip_tags($vacancy->description)) }}</div>
+                <div class="vacancies__heading">{!! $vacancy->translation->title !!}</div>
+                <div class="vacancies__desc">{{ preg_replace('/[^\p{L}\p{N}\s\.,!?-]/u', '', strip_tags($vacancy->translation->description)) }}</div>
 
                 <p class="vacancies__city">
                   <svg width="16" height="20">
                     <use xlink:href="#location" />
                   </svg>
-                  {{ $vacancy->city }}
+                  {{ $vacancy->translation->city }}
                 </p>
               </a>
             </li>
@@ -29,7 +29,7 @@
         </ul>
 
         <div class="vacancies__pagination">
-          {{ $data->vacancies->fragment('vacancies')->links('components.pagination') }}
+          {{ $vacancies->fragment('vacancies')->links('components.pagination') }}
         </div>
       </div>
 
@@ -40,7 +40,7 @@
           <label class="sr-only" for="city">@lang('Город')</label>
           <select name="city" id="city">
             <option value="">@lang('Все города')</option>
-            @foreach ($data->cities as $city)
+            @foreach ($cities as $city)
               <option value="{{ $city }}" @if (request()->query('city') == $city) selected @endif>{{ $city }}</option>
             @endforeach
           </select>
@@ -49,10 +49,10 @@
             <legend>@lang('Сфера')</legend>
 
             <ul>
-              @foreach ($data->categories as $category)
+              @foreach ($categories as $category)
                 <li>
-                  <input id="{{ $category->name }}" type="checkbox" value="{{ $category->id }}" data-type="category" @if (request()->query('category') == $category->id) checked @endif>
-                  <label for="{{ $category->name }}">{{ $category->name }}</label>
+                  <input id="{{ $category->translation->name }}" type="checkbox" value="{{ $category->id }}" data-type="category" @if (request()->query('category') == $category->id) checked @endif>
+                  <label for="{{ $category->translation->name }}">{{ $category->translation->name }}</label>
                 </li>
               @endforeach
             </ul>
@@ -62,10 +62,10 @@
             <legend>@lang('Компании')</legend>
 
             <ul>
-              @foreach ($data->companies as $company)
+              @foreach ($companies as $company)
                 <li>
-                  <input id="{{ $company->title }}" type="checkbox" value="{{ $company->id }}" data-type="company" @if (request()->query('company') == $company->id) checked @endif>
-                  <label for="{{ $company->title }}">{{ $company->title }}</label>
+                  <input id="{{ $company->translation->name }}" type="checkbox" value="{{ $company->id }}" data-type="company" @if (request()->query('company') == $company->id) checked @endif>
+                  <label for="{{ $company->translation->name }}">{{ $company->translation->name }}</label>
                 </li>
               @endforeach
             </ul>

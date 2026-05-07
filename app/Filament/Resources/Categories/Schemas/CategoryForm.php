@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Filament\Resources\Categories\Schemas;
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Schema;
+
+class CategoryForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                Grid::make(1)
+                    ->schema([
+                        Select::make('icon')
+                            ->label('Иконка')
+                            ->options([
+                                '<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.85791 3.17334V6.8444" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.6473 3.17334V6.8444" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35132 11.8486H25.154" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.9896 23.9758C26.9896 24.8936 26.7326 25.7624 26.2798 26.4966C25.4355 27.9161 23.8814 28.8705 22.0948 28.8705C20.8589 28.8705 19.7331 28.4178 18.8765 27.6469C18.4972 27.3287 18.1668 26.9371 17.9098 26.4966C17.457 25.7624 17.2001 24.8936 17.2001 23.9758C17.2001 21.2715 19.3905 19.0811 22.0948 19.0811C23.5632 19.0811 24.8726 19.7296 25.7659 20.7453C26.5246 21.6141 26.9896 22.7399 26.9896 23.9758Z" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.1858 23.9756L21.3972 25.187L24.0037 22.7764" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M25.7657 11.1272V20.7454C24.8724 19.7297 23.5631 19.0812 22.0947 19.0812C19.3903 19.0812 17.1999 21.2716 17.1999 23.9759C17.1999 24.8937 17.4569 25.7625 17.9097 26.4967C18.1666 26.9372 18.497 27.3288 18.8764 27.647H9.85781C5.57491 27.647 3.73938 25.1996 3.73938 21.5286V11.1272C3.73938 7.45616 5.57491 5.00879 9.85781 5.00879H19.6473C23.9302 5.00879 25.7657 7.45616 25.7657 11.1272Z" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.7471 17.4898H14.7581" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.2179 17.4898H10.2289" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.2179 21.1612H10.2289" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/></svg>' => '<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.85791 3.17334V6.8444" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.6473 3.17334V6.8444" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35132 11.8486H25.154" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.9896 23.9758C26.9896 24.8936 26.7326 25.7624 26.2798 26.4966C25.4355 27.9161 23.8814 28.8705 22.0948 28.8705C20.8589 28.8705 19.7331 28.4178 18.8765 27.6469C18.4972 27.3287 18.1668 26.9371 17.9098 26.4966C17.457 25.7624 17.2001 24.8936 17.2001 23.9758C17.2001 21.2715 19.3905 19.0811 22.0948 19.0811C23.5632 19.0811 24.8726 19.7296 25.7659 20.7453C26.5246 21.6141 26.9896 22.7399 26.9896 23.9758Z" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.1858 23.9756L21.3972 25.187L24.0037 22.7764" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M25.7657 11.1272V20.7454C24.8724 19.7297 23.5631 19.0812 22.0947 19.0812C19.3903 19.0812 17.1999 21.2716 17.1999 23.9759C17.1999 24.8937 17.4569 25.7625 17.9097 26.4967C18.1666 26.9372 18.497 27.3288 18.8764 27.647H9.85781C5.57491 27.647 3.73938 25.1996 3.73938 21.5286V11.1272C3.73938 7.45616 5.57491 5.00879 9.85781 5.00879H19.6473C23.9302 5.00879 25.7657 7.45616 25.7657 11.1272Z" stroke="#0473E4" stroke-width="2.09775" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.7471 17.4898H14.7581" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.2179 17.4898H10.2289" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.2179 21.1612H10.2289" stroke="#0473E4" stroke-width="2.09775" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><g stroke="#0473e4" stroke-linecap="round" stroke-width="2.098" clip-path="url(#a)"><path stroke-linejoin="round" d="M26.779 5.517c-1.885 4.699-6.608 11.086-10.56 14.256l-2.411 1.933c-.306.22-.612.416-.955.55 0-.22-.012-.464-.049-.697-.134-1.028-.6-1.982-1.42-2.802-.831-.832-1.847-1.322-2.887-1.456-.245-.012-.49-.037-.734-.012a3.2 3.2 0 0 1 .6-1.028l1.908-2.411c3.157-3.953 9.57-8.7 14.256-10.573.722-.269 1.42-.073 1.86.38.465.452.686 1.15.392 1.86"/><path stroke-linejoin="round" d="M12.854 22.256a5.1 5.1 0 0 1-1.481 3.61c-.747.747-1.762 1.26-2.974 1.42l-3.01.33a2.587 2.587 0 0 1-2.851-2.875l.33-3.01c.294-2.68 2.533-4.394 4.907-4.443.245-.012.502 0 .734.012a4.93 4.93 0 0 1 2.888 1.457c.82.82 1.285 1.774 1.42 2.802.012.232.037.465.037.697M17.516 18.402a5.79 5.79 0 0 0-5.788-5.788"/><path d="m24.711 16.273.906.893c1.823 1.823 1.823 3.622 0 5.446l-3.623 3.622c-1.798 1.799-3.622 1.799-5.42 0M3.896 13.556c-1.799-1.823-1.799-3.622 0-5.445l3.622-3.622c1.799-1.8 3.622-1.8 5.421 0l.906.905M13.857 5.407 9.329 9.934M24.711 16.273l-3.622 3.61"/></g><defs><clipPath id="a"><path fill="#fff" d="M.09.695h29.37v29.37H.09z"/></clipPath></defs></svg>' => '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><g stroke="#0473e4" stroke-linecap="round" stroke-width="2.098" clip-path="url(#a)"><path stroke-linejoin="round" d="M26.779 5.517c-1.885 4.699-6.608 11.086-10.56 14.256l-2.411 1.933c-.306.22-.612.416-.955.55 0-.22-.012-.464-.049-.697-.134-1.028-.6-1.982-1.42-2.802-.831-.832-1.847-1.322-2.887-1.456-.245-.012-.49-.037-.734-.012a3.2 3.2 0 0 1 .6-1.028l1.908-2.411c3.157-3.953 9.57-8.7 14.256-10.573.722-.269 1.42-.073 1.86.38.465.452.686 1.15.392 1.86"/><path stroke-linejoin="round" d="M12.854 22.256a5.1 5.1 0 0 1-1.481 3.61c-.747.747-1.762 1.26-2.974 1.42l-3.01.33a2.587 2.587 0 0 1-2.851-2.875l.33-3.01c.294-2.68 2.533-4.394 4.907-4.443.245-.012.502 0 .734.012a4.93 4.93 0 0 1 2.888 1.457c.82.82 1.285 1.774 1.42 2.802.012.232.037.465.037.697M17.516 18.402a5.79 5.79 0 0 0-5.788-5.788"/><path d="m24.711 16.273.906.893c1.823 1.823 1.823 3.622 0 5.446l-3.623 3.622c-1.798 1.799-3.622 1.799-5.42 0M3.896 13.556c-1.799-1.823-1.799-3.622 0-5.445l3.622-3.622c1.799-1.8 3.622-1.8 5.421 0l.906.905M13.857 5.407 9.329 9.934M24.711 16.273l-3.622 3.61"/></g><defs><clipPath id="a"><path fill="#fff" d="M.09.695h29.37v29.37H.09z"/></clipPath></defs></svg>',
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" fill="none" viewBox="0 0 31 30"><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M9.116 11.61c1.199.6 2.227 1.506 2.973 2.632a1.86 1.86 0 0 1 0 2.092 7.77 7.77 0 0 1-2.973 2.619M16.593 18.953h4.894"/><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M11.698 27.52h7.342c6.118 0 8.566-2.448 8.566-8.567v-7.342c0-6.118-2.448-8.566-8.566-8.566h-7.342c-6.119 0-8.566 2.448-8.566 8.566v7.342c0 6.119 2.447 8.566 8.566 8.566"/></svg>' => '<svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" fill="none" viewBox="0 0 31 30"><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M9.116 11.61c1.199.6 2.227 1.506 2.973 2.632a1.86 1.86 0 0 1 0 2.092 7.77 7.77 0 0 1-2.973 2.619M16.593 18.953h4.894"/><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M11.698 27.52h7.342c6.118 0 8.566-2.448 8.566-8.567v-7.342c0-6.118-2.448-8.566-8.566-8.566h-7.342c-6.119 0-8.566 2.448-8.566 8.566v7.342c0 6.119 2.447 8.566 8.566 8.566"/></svg>',
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path stroke="#0473e4" stroke-linecap="round" stroke-width="2.098" d="M26.747 23.946V6.814q0-3.67-3.671-3.67H18.18q-3.67 0-3.671 3.67v17.132q0 3.67 3.671 3.67h4.895q3.67 0 3.67-3.67ZM14.51 8.038h6.118M14.51 22.722h4.895M14.51 17.766l6.118.06M14.51 12.932h3.671M7.192 3.143c-1.994 0-3.622 1.628-3.622 3.61v15.859c0 .55.233 1.383.514 1.86l1.004 1.664c1.15 1.921 3.047 1.921 4.197 0l1.003-1.664c.282-.477.514-1.31.514-1.86V6.752a3.624 3.624 0 0 0-3.61-3.609ZM10.802 9.26H3.57"/></svg>' => '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path stroke="#0473e4" stroke-linecap="round" stroke-width="2.098" d="M26.747 23.946V6.814q0-3.67-3.671-3.67H18.18q-3.67 0-3.671 3.67v17.132q0 3.67 3.671 3.67h4.895q3.67 0 3.67-3.67ZM14.51 8.038h6.118M14.51 22.722h4.895M14.51 17.766l6.118.06M14.51 12.932h3.671M7.192 3.143c-1.994 0-3.622 1.628-3.622 3.61v15.859c0 .55.233 1.383.514 1.86l1.004 1.664c1.15 1.921 3.047 1.921 4.197 0l1.003-1.664c.282-.477.514-1.31.514-1.86V6.752a3.624 3.624 0 0 0-3.61-3.609ZM10.802 9.26H3.57"/></svg>',
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 30 30"><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M20.865 23.387H9.362c-.514 0-1.089-.403-1.26-.893L3.036 8.324c-.722-2.032.122-2.656 1.86-1.407l4.772 3.414c.796.55 1.701.269 2.044-.624l2.153-5.74c.686-1.835 1.824-1.835 2.509 0l2.154 5.74c.342.893 1.248 1.174 2.03.624l4.48-3.194c1.909-1.37 2.826-.673 2.043 1.542l-4.943 13.84c-.184.465-.76.868-1.273.868M8.383 27.083h13.46M12.054 17.294h6.119"/></svg>' => '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 30 30"><path stroke="#0473e4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.098" d="M20.865 23.387H9.362c-.514 0-1.089-.403-1.26-.893L3.036 8.324c-.722-2.032.122-2.656 1.86-1.407l4.772 3.414c.796.55 1.701.269 2.044-.624l2.153-5.74c.686-1.835 1.824-1.835 2.509 0l2.154 5.74c.342.893 1.248 1.174 2.03.624l4.48-3.194c1.909-1.37 2.826-.673 2.043 1.542l-4.943 13.84c-.184.465-.76.868-1.273.868M8.383 27.083h13.46M12.054 17.294h6.119"/></svg>'
+                            ])
+                            ->allowHtml(),
+
+                        TextInput::make('ru_name')
+                            ->label('Название (RU)')
+                            ->afterStateHydrated(function ($component, $record) {
+                                if (!$record) return;
+
+                                $translation = $record->translations
+                                    ->firstWhere('locale', 'ru');
+
+                                if ($translation) {
+                                    $component->state($translation->name);
+                                }
+                            })
+                            ->required()
+                            ->maxLength(25),
+
+                        TextInput::make('en_name')
+                            ->label('Название (EN)')
+                            ->afterStateHydrated(function ($component, $record) {
+                                if (!$record) return;
+
+                                $translation = $record->translations
+                                    ->firstWhere('locale', 'en');
+
+                                if ($translation) {
+                                    $component->state($translation->name);
+                                }
+                            })
+                            ->required()
+                            ->maxLength(25),
+                    ]),
+            ]);
+    }
+}

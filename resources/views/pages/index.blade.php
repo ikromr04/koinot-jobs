@@ -16,6 +16,10 @@
 
     <x-blocks.advantages class="index__advantages" />
 
+    <x-blocks.blog class="mb-14" />
+
     <x-forms.bot-form class="index__advantages" />
+
+    <x-blocks.faq class="index__advantages" />
   </main>
 @endsection

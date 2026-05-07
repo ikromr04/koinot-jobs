@@ -39,6 +39,7 @@ class CompaniesTable
                     ->label('Логотип (RU)')
                     ->imageHeight(40)
                     ->imageWidth(100)
+                    ->getStateUsing(fn($record) => $record->logo_ru ? asset($record->logo_ru) : null)
                     ->disk('public')
                     ->extraImgAttributes(['style' => 'object-fit: contain;']),
 
@@ -55,6 +56,7 @@ class CompaniesTable
                     ->label('Логотип (EN)')
                     ->imageHeight(40)
                     ->imageWidth(100)
+                    ->getStateUsing(fn($record) => $record->logo_en ? asset($record->logo_en) : null)
                     ->disk('public')
                     ->extraImgAttributes(['style' => 'object-fit: contain;']),
 

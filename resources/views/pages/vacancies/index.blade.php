@@ -12,7 +12,7 @@
           @foreach ($vacancies as $vacancy)
             <li class="vacancies__item">
               <a class="vacancies__link" href="{{ route('pages.vacancy', $vacancy->id) }}">
-                <img class="vacancies__logo" src="{{ asset($vacancy->company->translation->logo) }}" alt="{{ $vacancy->company->translation->title }}">
+                <img class="vacancies__logo" src="{{ asset($vacancy->company?->translation?->logo) }}" alt="{{ $vacancy->company?->translation?->title }}">
 
                 <div class="vacancies__heading">{!! $vacancy->translation->title !!}</div>
                 <div class="vacancies__desc">{{ preg_replace('/[^\p{L}\p{N}\s\.,!?-]/u', '', strip_tags($vacancy->translation->description)) }}</div>

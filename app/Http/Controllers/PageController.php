@@ -66,7 +66,8 @@ class PageController extends Controller
                     DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 88 ) as description'),
                 ]);
             }
-        ]);
+        ])
+            ->latest();
 
         if ($request->query('city')) {
             $vacancies = $vacancies->whereHas('translation', function ($query) use ($request) {
@@ -101,41 +102,48 @@ class PageController extends Controller
 
     public function vacancy(Vacancy $vacancy): ViewView
     {
-        $data = (object)[
-            'vacancy' => $vacancy,
-            'similarVacancies' => Vacancy::select([
-                'id',
-                'lang',
-                'company_id',
-                'category_id',
-                'city',
-                'title',
-                DB::raw('SUBSTRING(content, 1, 88) as description')
-            ])->where('category_id', $vacancy->category->id)->get(),
-        ];
+        $vacancies = Vacancy::with([
+            'company.translation',
+            'category.translation',
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'vacancy_id',
+                    'locale',
+                    'title',
+                    'city',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 88 ) as description'),
+                ]);
+            }
+        ])
+            ->latest()
+            ->where('category_id', $vacancy->category?->id)
+            ->get();
 
-        return view('pages.vacancies.show', compact('data'));
+        return view('pages.vacancies.show', compact('vacancy', 'vacancies'));
     }
 
     public function category(Category $category): View
     {
-        $data = (object)[
-            'vacancies' => Vacancy::select([
-                'id',
-                'lang',
-                'company_id',
-                'category_id',
-                'city',
-                'title',
-                DB::raw('SUBSTRING(content, 1, 88) as description')
-            ])
-                ->where('category_id', $category->id)
-                ->latest()
-                ->get(),
-            'category' => $category,
-        ];
+        $vacancies = Vacancy::with([
+            'company.translation',
+            'category.translation',
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'vacancy_id',
+                    'locale',
+                    'title',
+                    'city',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 88 ) as description'),
+                ]);
+            }
+        ])
+            ->where('category_id', $category->id)
+            ->latest()
+            ->get();
 
-        return view('pages.categories.show', compact('data'));
+        return view('pages.categories.show', compact('category', 'vacancies'));
     }
 
     public function teambuilding(): View
@@ -146,5 +154,10 @@ class PageController extends Controller
     public function faq(): View
     {
         return view('pages.faq');
+    }
+
+    public function news(): View
+    {
+        return view('pages.news.index');
     }
 }

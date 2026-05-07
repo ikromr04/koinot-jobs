@@ -63,5 +63,7 @@
   "Откликнуться": "Откликнуться",
   "Соглашаюсь на обработку": "Соглашаюсь на обработку",
   "своих данных": "своих данных",
-  "Меню": "Меню"
+  "Меню": "Меню",
+  "filament-forms::components.rich_editor.actions.text_color.modal.heading": "Цвет текста",
+  "filament-forms::components.rich_editor.actions.text_color.modal.form.custom_color.label": "Ввыберите цвет"
 }

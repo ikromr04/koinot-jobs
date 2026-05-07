@@ -5,8 +5,6 @@ namespace App\Filament\Resources\Companies\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 
 class CompanyForm
 {

@@ -1,5 +1,7 @@
 <?php
 
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
+
 return [
 
     /*
@@ -134,4 +136,12 @@ return [
 
     'system_route_prefix' => 'filament',
 
+    'rich_editor_toolbar' => [
+        [ToolbarButtonGroup::make('Параграф', ['paragraph', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])->textualButtons()],
+        [ToolbarButtonGroup::make('Выровнять', ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'])->textualButtons()],
+        ['textColor'],
+        ['lead', 'small', 'bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'highlight', 'link', 'clearFormatting'],
+        ['blockquote', 'codeBlock', 'bulletList', 'orderedList', 'details', 'horizontalRule', 'code', 'attachFiles', 'table'],
+        ['undo', 'redo'],
+    ],
 ];

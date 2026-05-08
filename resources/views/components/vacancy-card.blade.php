@@ -5,7 +5,7 @@
 
     <div class="vacancy-card__address">
         <div>
-            <img class="max-w-full max-h-10" src="{{ $vacancy->company?->translation?->logo }}">
+            <img class="max-w-full max-h-10" src="{{ '/storage/'.$vacancy->company?->translation?->logo }}">
         </div>
 
         <a class="vacancy-card__more" href="{{ route('pages.vacancy', $vacancy->id) }}">

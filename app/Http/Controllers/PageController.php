@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Company;
+use App\Models\News;
 use App\Models\Vacancy;
 use App\Models\VacancyTranslation;
 use Illuminate\Contracts\View\View as ViewView;
@@ -158,6 +159,16 @@ class PageController extends Controller
 
     public function news(): View
     {
-        return view('pages.news.index');
+        $news = News::with('translation');
+
+        if (request()->query('sort') === 'desc') {
+            $news = $news->oldest();
+        } else {
+            $news = $news->latest();
+        }
+
+        $news = $news->get();
+
+        return view('pages.news.index', compact('news'));
     }
 }

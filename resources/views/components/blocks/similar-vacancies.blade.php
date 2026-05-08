@@ -23,7 +23,7 @@
               {{ $vacancy->translation?->city }}
             </div>
             <div class="flex items-center gap-2">
-              <img class="w-[80px] h-6 object-contain" src="{{ asset($vacancy->company?->translation?->logo) }}" width="80" height="24" alt="{{ $vacancy->company?->translation?->title }}">
+              <img class="w-[80px] h-6 object-contain" src="{{ asset('/storage/'.$vacancy->company?->translation?->logo) }}" width="80" height="24" alt="{{ $vacancy->company?->translation?->title }}">
             </div>
           </div>
         </a>

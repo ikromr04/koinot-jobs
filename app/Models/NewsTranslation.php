@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CompanyTranslation extends Model
+class NewsTranslation extends Model
 {
     protected $guarded = [];
 
-    public function company(): BelongsTo
+    public function news(): BelongsTo
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(News::class);
     }
 }

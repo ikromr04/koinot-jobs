@@ -26,7 +26,7 @@ class BlockForm
                         $translation = $record->translations->firstWhere('locale', 'ru');
 
                         if ($translation) {
-                            $component->state($translation->logo);
+                            $component->state($translation->image);
                         }
                     }),
 
@@ -43,7 +43,7 @@ class BlockForm
                         $translation = $record->translations->firstWhere('locale', 'en');
 
                         if ($translation) {
-                            $component->state($translation->logo);
+                            $component->state($translation->image);
                         }
                     }),
 

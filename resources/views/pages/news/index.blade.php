@@ -11,10 +11,10 @@
 
             <div class="flex gap-4">
                 <a class="flex items-center justify-center h-10 px-5 rounded-full {{ request()->query('sort') == 'desc' ? 'text-[#73787D] bg-[#EAECF4]' : 'text-white bg-[#3B4663]' }}" href="?sort=asc">
-                    Новые новости
+                    @lang('Новые новости')
                 </a>
                 <a class="flex items-center justify-center h-10 px-5 rounded-full {{ request()->query('sort') != 'desc' ? 'text-[#73787D] bg-[#EAECF4]' : 'text-white bg-[#3B4663]' }}" href="?sort=desc">
-                    Старые Новости
+                    @lang('Старые новости')
                 </a>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <main class="index">
         <div class="index__vitrin">
             <div class="title container !text-center !mt-10 md:!mt-16 xl:!mt-20">
-                @lang('МЫ ЦЕНИМ КАЖДОГО!</br>МЫ ВЕРИМ В КАЖДОГО! ')
+                @lang('МЫ ЦЕНИМ КАЖДОГО!</br>МЫ ВЕРИМ В КАЖДОГО!')
             </div>
 
             <x-blocks.hot-vacancies class="index__vacancies md:py-10 container" :vacancies="$hotVacancies" />

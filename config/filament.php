@@ -142,6 +142,7 @@ return [
         ['textColor'],
         ['lead', 'small', 'bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'highlight', 'link', 'clearFormatting'],
         ['blockquote', 'codeBlock', 'bulletList', 'orderedList', 'details', 'horizontalRule', 'code', 'attachFiles', 'table'],
+        ['grid'],
         ['undo', 'redo'],
     ],
 ];

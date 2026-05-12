@@ -28,12 +28,12 @@
                 </a>
             </li>
             <li class="header__item">
-                <a class="header__navlink{{ request()->routeIs('pages.vacancies') ? ' header__navlink--current' : '' }}" href="{{ route('pages.vacancies') }}">
+                <a class="header__navlink{{ request()->routeIs('pages.vacancies', 'pages.vacancy') ? ' header__navlink--current' : '' }}" href="{{ route('pages.vacancies') }}">
                     @lang('Все вакансии')
                 </a>
             </li>
             <li class="header__item">
-                <a class="header__navlink" href="{{ route('pages.news') }}">
+                <a class="header__navlink{{ request()->routeIs('pages.news', 'news.show') ? ' header__navlink--current' : '' }}" href="{{ route('pages.news') }}">
                     @lang('Блог')
                 </a>
             </li>

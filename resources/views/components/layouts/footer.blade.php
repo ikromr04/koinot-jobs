@@ -25,8 +25,8 @@
           </a>
         </li>
         <li class="footer__navitem">
-          <a class="footer__navlink" href="{{ route('pages.team') }}">
-            @lang('Наш тим')
+          <a class="footer__navlink" href="{{ route('pages.news') }}">
+            @lang('Блог')
           </a>
         </li>
       </ul>

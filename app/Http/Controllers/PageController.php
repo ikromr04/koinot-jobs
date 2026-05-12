@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Block;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\News;
@@ -39,7 +40,32 @@ class PageController extends Controller
             ->whereHas('translation')
             ->get();
 
-        return view('pages.index', compact('hotVacancies', 'categories'));
+        $numbers = Block::where('slug', 'numbers')
+            ->with('translation')
+            ->first();
+
+        $blog = Block::where('slug', 'news')
+            ->with('translation')
+            ->first();
+
+        $news = News::with([
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'news_id',
+                    'locale',
+                    'image',
+                    'title',
+                    'content',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 118 ) as description'),
+                ]);
+            }
+        ])
+            ->whereHas('translation')
+            ->latest()
+            ->get();
+
+        return view('pages.index', compact('hotVacancies', 'categories', 'numbers', 'blog', 'news'));
     }
 
     public function team(): View
@@ -159,7 +185,24 @@ class PageController extends Controller
 
     public function news(): View
     {
-        $news = News::with('translation');
+        $blog = Block::where('slug', 'news')
+            ->with('translation')
+            ->first();
+
+        $news = News::with([
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'news_id',
+                    'locale',
+                    'image',
+                    'title',
+                    'content',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 118 ) as description'),
+                ]);
+            }
+        ])
+            ->whereHas('translation');
 
         if (request()->query('sort') === 'desc') {
             $news = $news->oldest();
@@ -169,6 +212,14 @@ class PageController extends Controller
 
         $news = $news->get();
 
-        return view('pages.news.index', compact('news'));
+        return view('pages.news.index', compact('blog', 'news'));
+    }
+
+    public function newsShow(string $id): View
+    {
+        $news = News::with('translation')
+            ->findOrFail($id);
+
+        return view('pages.news.show', compact('news'));
     }
 }

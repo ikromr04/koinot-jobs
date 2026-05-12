@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="index container py-26">
-        <x-blocks.blog />
+        <x-blocks.blog :blog="$blog" />
 
         <div class="flex items-center justify-between -mt-14!">
             <h1 class="title">
@@ -19,26 +19,12 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-8">
-            @foreach ($news as $item)
-                <article class="rounded-3xl bg-primary/5 p-6 flex gap-6">
-                    <img class="flex rounded-[20px] w-[264px] h-[288px] object-cover" src="{{ asset('/storage/' . $item->translation?->image) }}" alt="News image">
-
-                    <div class="flex flex-col">
-                        <div class="text-[24px] mb-4">
-                            {!! $item->translation?->title !!}
-                        </div>
-
-                        <div>
-                            {!! $item->translation?->content !!}
-                        </div>
-
-                        <div class="text-[#73787D] mt-auto">
-                            {{ \Carbon\Carbon::parse($item->date)->translatedFormat('d F Y') }}
-                        </div>
-                    </div>
-                </article>
+        <ul class="advantages__list">
+            @foreach ($news as $new)
+                <li class="advantages__item">
+                    <x-advantage-card :news="$new" />
+                </li>
             @endforeach
-        </div>
+        </ul>
     </main>
 @endsection

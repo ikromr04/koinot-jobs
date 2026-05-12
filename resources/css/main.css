@@ -3,71 +3,71 @@
 @config "../../tailwind.config.js";
 
 @font-face {
-  font-family: 'DIN Pro';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../../public/fonts/DINPro-Light.woff') format('woff');
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../../public/fonts/DINPro-Light.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'DIN Pro';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../../public/fonts/DINPro.woff') format('woff');
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../public/fonts/DINPro.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'DIN Pro';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../../public/fonts/DINPro-Medium.woff') format('woff');
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../../public/fonts/DINPro-Medium.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'DIN Pro';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../../public/fonts/DINPro-Bold.woff') format('woff');
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../public/fonts/DINPro-Bold.woff') format('woff');
 }
 
 *,
 *::before,
 *::after {
-  font-family: inherit;
-  box-sizing: border-box;
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
 img {
-  @apply max-w-full;
+    @apply max-w-full;
 }
 
 .page {
-  font-family: 'DIN Pro', sans-serif;
+    font-family: 'DIN Pro', sans-serif;
 }
 
 .page__body {
-  @apply flex flex-col m-0 min-h-screen bg-[#F3F4F6] bg-contain bg-center bg-no-repeat;
+    @apply flex flex-col m-0 min-h-screen bg-[#F3F4F6] bg-contain bg-center bg-no-repeat;
 
-  &.nav-shown {
-    @apply overflow-hidden;
-  }
+    &.nav-shown {
+        @apply overflow-hidden;
+    }
 }
 
 .container {
-  @apply w-[90vw] mx-auto max-w-[1280px];
+    @apply w-[90vw] mx-auto max-w-[1280px];
 }
 
 .title {
-  @apply font-bold text-center text-[18px] mt-0 mb-5;
-  @apply md:text-[50px] md:text-left md:mb-14;
+    @apply font-bold text-center text-[18px] mt-0 mb-5;
+    @apply md:text-[50px] md:text-left md:mb-14;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @import './components/lang.css';
@@ -95,3 +95,8 @@ html {
 @import './pages/resume.css';
 @import './pages/vacancies/show.css';
 @import './pages/teambuilding.css';
+
+.no-style,
+.no-style * {
+    all: unset;
+}

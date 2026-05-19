@@ -1,6 +1,6 @@
 <section class="container" id="career">
     <h2 class="title text-center!">
-        Frequently Asking Questions
+        @lang('Frequently Asking Questions')
     </h2>
 
     <div id="accordion-collapse" data-accordion="collapse" class="rounded-[10px] border border-gray-300 overflow-hidden shadow-xs mb-10 md:mb-20">

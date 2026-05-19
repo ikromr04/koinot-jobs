@@ -15,7 +15,7 @@
       </a>
 
       <p class="footer__description">
-        @lang('Нам доступно множество вариантов отрывков, но большинство из них подверглись изменению в той или иной форме путем инъекций.')
+        @lang('Платформа для поиска вакансий <br> Группы Компаний «КОИНОТИ НАВ»')
       </p>
 
       <ul class="footer__nav">
@@ -76,9 +76,6 @@
           </a>
           <a href="{{ route('pages.index') }}#categories">
             @lang('Категории')
-          </a>
-          <a href="{{ route('pages.index') }}#career">
-            @lang('Карьерный рост')
           </a>
           <a href="{{ route('pages.resume') }}">
             @lang('Резюме')

@@ -39,7 +39,7 @@
 
 .footer__description {
   @apply hidden order-2 mt-0 mb-8 leading-[1.4];
-  @apply md:flex;
+  @apply md:flex md:min-w-max;
 }
 
 .footer__nav {

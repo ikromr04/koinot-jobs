@@ -88,5 +88,6 @@
     "filament-forms::components.rich_editor.actions.grid.modal.form.is_asymmetric.label": "Асимметричная сетка",
     "filament-forms::components.rich_editor.actions.grid.modal.form.columns.label": "Количество колонок",
     "filament-forms::components.rich_editor.actions.grid.modal.form.start_span.label": "Начало span",
-    "filament-forms::components.rich_editor.actions.grid.modal.form.end_span.label": "Конец span"
+    "filament-forms::components.rich_editor.actions.grid.modal.form.end_span.label": "Конец span",
+    "Frequently Asking Questions": "Ответы на вопросы"
 }

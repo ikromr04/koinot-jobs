@@ -17,7 +17,7 @@
           {{ $vacancy->translation?->city }}
         </p>
 
-        <div>
+        <div class="no-style">
           {!! $vacancy->translation?->content !!}
         </div>
       </div>

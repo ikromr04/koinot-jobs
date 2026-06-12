@@ -2,7 +2,7 @@
 
 <section {{ $attributes->merge(['class' => 'hot-vacancies']) }}>
     <h2 class="hot-vacancies__title title xl:!text-3xl">
-        @lang('Присоединяйтесь к нашей команде')
+        @lang('Присоединяйтесь к нашей команде!')
     </h2>
 
     <ul class="hot-vacancies__list">

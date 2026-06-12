@@ -15,7 +15,7 @@
       </a>
 
       <p class="footer__description">
-        @lang('Платформа для поиска вакансий <br> Группы Компаний «КОИНОТИ НАВ»')
+        @lang('Ваш следующий карьерный шаг начинается здесь')
       </p>
 
       <ul class="footer__nav">
@@ -37,7 +37,7 @@
           <dd>
             <span>
               <svg width="17" height="16">
-                <use xlink:href="#call" />
+                <use xlink:href="#location" />
               </svg>
             </span>
             @lang('Душанбе, Таджикистан')
@@ -69,37 +69,28 @@
 
     <dl class="footer__links">
       <div class="footer__links-item">
-        <dt>@lang('О нас')</dt>
+        <dt>@lang('О «КОИНОТИ НАВ»')</dt>
         <dd>
           <a href="https://koinotinav.tj/about/history">
-            @lang('История')
+            @lang('История компании')
           </a>
           <a class="min-w-max" href="https://koinotinav.tj/about/mission">
-            @lang('Миссия, Видение, Ценности')
+            @lang('Миссия и культура')
           </a>
           <a href="{{ route('pages.news') }}">
-            @lang('Новости компании')
+            @lang('Новости')
           </a>
         </dd>
       </div>
 
       <div class="footer__links-item">
-        <dt>@lang('Полезные ссылки')</dt>
+        <dt>@lang('Узнать больше')</dt>
         <dd>
           <a href="https://koinotinav.tj/projects">
-            @lang('Компании')
+            @lang('Наши Компании')
           </a>
           <a href="https://koinotinav.tj/contribution">
             @lang('Вклад в общество')
-          </a>
-        </dd>
-      </div>
-
-      <div class="footer__links-item">
-        <dt>@lang('Поддержка')</dt>
-        <dd>
-          <a href="{{ route('pages.faq') }}">
-            @lang('FAQ')
           </a>
         </dd>
       </div>

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>{{ config('app.name') }}</title>
+        <title>@lang('Карьерный портал «КОИНОТИ НАВ»')</title>
 
         <link href="{{ asset('favicon.ico') }}" rel="icon">
         <link href="{{ asset('favicons/icon.svg') }}" rel="icon" type="image/svg+xml">

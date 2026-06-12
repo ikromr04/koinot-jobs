@@ -69,21 +69,6 @@
 
     <dl class="footer__links">
       <div class="footer__links-item">
-        <dt>@lang('Меню')</dt>
-        <dd>
-          <a href="/">
-            @lang('Главная')
-          </a>
-          <a href="{{ route('pages.index') }}#categories">
-            @lang('Категории')
-          </a>
-          <a href="{{ route('pages.resume') }}">
-            @lang('Резюме')
-          </a>
-        </dd>
-      </div>
-
-      <div class="footer__links-item">
         <dt>@lang('О нас')</dt>
         <dd>
           <a href="https://koinotinav.tj/about/history">
@@ -92,8 +77,8 @@
           <a class="min-w-max" href="https://koinotinav.tj/about/mission">
             @lang('Миссия, Видение, Ценности')
           </a>
-          <a href="https://koinotinav.tj/news">
-            @lang('Новости')
+          <a href="{{ route('pages.news') }}">
+            @lang('Новости компании')
           </a>
         </dd>
       </div>

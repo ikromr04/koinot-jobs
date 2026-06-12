@@ -39,7 +39,7 @@ class CategoryForm
                                 }
                             })
                             ->required()
-                            ->maxLength(25),
+                            ->maxLength(255),
 
                         TextInput::make('en_name')
                             ->label('Название (EN)')
@@ -54,7 +54,7 @@ class CategoryForm
                                 }
                             })
                             ->required()
-                            ->maxLength(25),
+                            ->maxLength(255),
                     ]),
             ]);
     }

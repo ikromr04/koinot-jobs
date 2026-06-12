@@ -1,3 +1,7 @@
 .advantages__list {
   @apply grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-4 list-none p-0 m-0;
 }
+
+.advantages__item {
+  @apply flex;
+}

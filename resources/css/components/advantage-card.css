@@ -9,13 +9,17 @@
 }
 
 .advantage-card__inner {
-  @apply p-3;
+  @apply p-3 flex flex-col grow;
   @apply md:p-0;
 }
 
 .advantage-card__title {
   @apply mt-0 mb-4 font-bold text-[16px] text-[#05264E];
   @apply md:text-[20px] md:mb-5;
+
+  * {
+    @apply font-bold;
+  }
 }
 
 .advantage-card__time {
@@ -28,6 +32,6 @@
 }
 
 .advantage-card__link {
-  @apply flex justify-center items-center px-6 font-medium min-h-10 text-white bg-primary text-[13px] rounded-full w-max;
+  @apply flex justify-center items-center px-6 font-medium min-h-10 text-white bg-primary text-[13px] rounded-full w-max mt-auto;
   @apply md:min-h-12 md:text-[16px] md:leading-none;
 }

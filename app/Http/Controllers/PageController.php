@@ -62,7 +62,8 @@ class PageController extends Controller
             }
         ])
             ->whereHas('translation')
-            ->latest()
+            ->orderBy('date', 'desc')
+            ->take(3)
             ->get();
 
         return view('pages.index', compact('hotVacancies', 'categories', 'numbers', 'blog', 'news'));
@@ -102,13 +103,20 @@ class PageController extends Controller
             });
         }
 
-        if ($request->query('company')) {
-            $vacancies = $vacancies->where('company_id', $request->query('company'));
-        }
+        $vacancies = $vacancies->when(
+            $request->query('company'),
+            fn($query, $companies) =>
+            $query->whereIn('company_id', explode(',', $companies))
+        );
 
-        if ($request->query('category')) {
-            $vacancies = $vacancies->where('category_id', $request->query('category'));
-        }
+        $vacancies = $vacancies->when(
+            $request->query('category'),
+            fn($query, $categories) =>
+            $query->whereIn(
+                'category_id',
+                explode(',', $categories)
+            )
+        );
 
         $vacancies = $vacancies->whereHas('translation')
             ->paginate(5)
@@ -202,7 +210,8 @@ class PageController extends Controller
                 ]);
             }
         ])
-            ->whereHas('translation');
+            ->whereHas('translation')
+            ->orderBy('date', 'desc');
 
         if (request()->query('sort') === 'desc') {
             $news = $news->oldest();

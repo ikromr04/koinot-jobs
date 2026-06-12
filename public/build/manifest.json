@@ -24,7 +24,7 @@
     "src": "public/images/spiral.bg.png"
   },
   "resources/css/main.css": {
-    "file": "assets/main-D36Fk7FO.css",
+    "file": "assets/main-wf92RKRR.css",
     "src": "resources/css/main.css",
     "isEntry": true,
     "name": "main",
@@ -33,7 +33,7 @@
     ]
   },
   "resources/js/main.js": {
-    "file": "assets/main-BP1AcZUv.js",
+    "file": "assets/main-DAiL9ZOC.js",
     "name": "main",
     "src": "resources/js/main.js",
     "isEntry": true

@@ -13,9 +13,9 @@
     >
 
     <div class="advantage-card__inner">
-        <h3 class="advantage-card__title">
+        <div class="advantage-card__title">
             {!! $news->translation?->title !!}
-        </h3>
+        </div>
 
         <time class="advantage-card__time" datetime="2025-08-30">
             <svg class="text-primary" width="12" height="14">

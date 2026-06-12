@@ -98,5 +98,5 @@ html {
 
 .no-style,
 .no-style * {
-    all: unset;
+    all: revert;
 }

@@ -130,6 +130,9 @@ class VacancyForm
 
                 Checkbox::make('hot')
                     ->label('Горячая вакансия'),
+
+                Checkbox::make('hidden')
+                    ->label('Скрыть'),
             ]);
     }
 }

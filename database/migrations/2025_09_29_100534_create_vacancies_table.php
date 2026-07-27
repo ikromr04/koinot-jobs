@@ -26,6 +26,8 @@ return new class extends Migration
 
       $table->boolean('hot')->default(false);
 
+      $table->boolean('hidden')->default(false);
+
       $table->timestamps();
     });
   }

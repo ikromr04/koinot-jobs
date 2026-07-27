@@ -37,6 +37,7 @@ class PageController extends Controller
         ])
             ->whereHas('translation')
             ->where('hot', true)
+            ->where('hidden', false)
             ->latest()
             ->take(8)
             ->get();
@@ -100,6 +101,7 @@ class PageController extends Controller
                 ]);
             }
         ])
+            ->where('hidden', false)
             ->latest();
 
         if ($request->query('city')) {
@@ -158,6 +160,7 @@ class PageController extends Controller
         ])
             ->latest()
             ->where('category_id', $vacancy->category?->id)
+            ->where('hidden', false)
             ->get();
 
         return view('pages.vacancies.show', compact('vacancy', 'vacancies'));
@@ -180,6 +183,7 @@ class PageController extends Controller
             }
         ])
             ->where('category_id', $category->id)
+            ->where('hidden', false)
             ->latest()
             ->get();
 

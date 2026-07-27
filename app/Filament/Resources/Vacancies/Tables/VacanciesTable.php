@@ -38,6 +38,9 @@ class VacanciesTable
                     ->with(['company.translation', 'category.translation']);
             })
             ->columns([
+                CheckboxColumn::make('hidden')
+                    ->label('Скрыть'),
+
                 TextColumn::make('company.translation.name')
                     ->label('Компания')
                     ->sortable(),

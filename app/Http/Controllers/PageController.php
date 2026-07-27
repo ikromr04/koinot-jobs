@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Block;
 use App\Models\Category;
 use App\Models\Company;
+use App\Models\Faq;
 use App\Models\News;
 use App\Models\Vacancy;
 use App\Models\VacancyTranslation;
@@ -17,6 +18,10 @@ class PageController extends Controller
 {
     public function index(): View
     {
+        $faqs = Faq::with(['translation'])
+            ->whereHas('translation')
+            ->get();
+
         $hotVacancies = Vacancy::with([
             'company.translation',
             'translation' => function ($query) {
@@ -66,7 +71,7 @@ class PageController extends Controller
             ->take(3)
             ->get();
 
-        return view('pages.index', compact('hotVacancies', 'categories', 'numbers', 'blog', 'news'));
+        return view('pages.index', compact('hotVacancies', 'categories', 'numbers', 'blog', 'news', 'faqs'));
     }
 
     public function team(): View
@@ -188,7 +193,11 @@ class PageController extends Controller
 
     public function faq(): View
     {
-        return view('pages.faq');
+        $faqs = Faq::with(['translation'])
+            ->whereHas('translation')
+            ->get();
+
+        return view('pages.faq', compact('faqs'));
     }
 
     public function news(): View

@@ -5,7 +5,7 @@
     <meta property="og:description" content="{{ strip_tags($vacancy->translation?->description) }}">
     <meta property="og:title" content="{{ strip_tags($vacancy->translation?->title) }}">
     <meta property="og:url" content="{{ route('pages.vacancy', $vacancy->id) }}">
-    <meta property="og:image" content="{{ asset('images/og.svg') }}">
+    <meta property="og:image" content="{{ asset('images/og.jpg') }}">
     <link rel="canonical" href="{{ route('pages.vacancy', $vacancy->id) }}">
 @endsection
 

@@ -17,7 +17,7 @@
             <meta property="og:description" content="@lang('Найдите работу своей мечты на карьерном портале «КОИНОТИ НАВ». Актуальные вакансии, резюме, работодатели и новые возможности для успешной карьеры в Таджикистане.')">
             <meta property="og:title" content="@lang('Карьерный портал «КОИНОТИ НАВ»')">
             <meta property="og:url" content="{{ route('pages.index') }}">
-            <meta property="og:image" content="{{ asset('images/og.svg') }}">
+            <meta property="og:image" content="{{ asset('images/og.jpg') }}">
             <link rel="canonical" href="{{ route('pages.index') }}">
         @endif
 

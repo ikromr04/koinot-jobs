@@ -9,7 +9,6 @@ use App\Models\Faq;
 use App\Models\News;
 use App\Models\Vacancy;
 use App\Models\VacancyTranslation;
-use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -75,11 +74,6 @@ class PageController extends Controller
         return view('pages.index', compact('hotVacancies', 'categories', 'numbers', 'blog', 'news', 'faqs'));
     }
 
-    public function team(): View
-    {
-        return view('pages.team');
-    }
-
     public function resume(): View
     {
         return view('pages.resume');
@@ -142,8 +136,26 @@ class PageController extends Controller
         return view('pages.vacancies.index', compact('vacancies', 'cities', 'categories', 'companies'));
     }
 
-    public function vacancy(Vacancy $vacancy): ViewView
+    public function vacancy(string $id): View
     {
+        $vacancy = Vacancy::with([
+            'company.translation',
+            'category.translation',
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'vacancy_id',
+                    'locale',
+                    'title',
+                    'city',
+                    'content',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 88 ) as description'),
+                ]);
+            }
+        ])
+            ->where('hidden', false)
+            ->findOrFail($id);
+
         $vacancies = Vacancy::with([
             'company.translation',
             'category.translation',
@@ -190,20 +202,6 @@ class PageController extends Controller
         return view('pages.categories.show', compact('category', 'vacancies'));
     }
 
-    public function teambuilding(): View
-    {
-        return view('pages.teambuilding');
-    }
-
-    public function faq(): View
-    {
-        $faqs = Faq::with(['translation'])
-            ->whereHas('translation')
-            ->get();
-
-        return view('pages.faq', compact('faqs'));
-    }
-
     public function news(): View
     {
         $blog = Block::where('slug', 'news')
@@ -239,7 +237,19 @@ class PageController extends Controller
 
     public function newsShow(string $id): View
     {
-        $news = News::with('translation')
+        $news = News::with([
+            'translation' => function ($query) {
+                $query->select([
+                    'id',
+                    'news_id',
+                    'locale',
+                    'image',
+                    'title',
+                    'content',
+                    DB::raw('SUBSTRING( REGEXP_REPLACE(content, \'<[^>]*>\', \'\'), 1, 118 ) as description'),
+                ]);
+            }
+        ])
             ->findOrFail($id);
 
         return view('pages.news.show', compact('news'));

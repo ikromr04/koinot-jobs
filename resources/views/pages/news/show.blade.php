@@ -1,5 +1,14 @@
 @extends('main')
 
+@section('meta')
+    <meta name="description" content="{{ strip_tags($news->translation?->description) }}">
+    <meta property="og:description" content="{{ strip_tags($news->translation?->description) }}">
+    <meta property="og:title" content="{{ strip_tags($news->translation?->title) }}">
+    <meta property="og:url" content="{{ route('news.show', $news->id) }}">
+    <meta property="og:image" content="{{ asset('/storage/' . $news->translation?->image) }}">
+    <link rel="canonical" href="{{ route('news.show', $news->id) }}">
+@endsection
+
 @section('content')
     <main class="team container">
         <h1 class="team__title title">

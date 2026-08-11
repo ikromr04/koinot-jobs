@@ -5,6 +5,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="keywords" content="@lang('Карьерный портал «КОИНОТИ НАВ», вакансии, резюме, работодатели, Таджикистан, работа в Таджикистане, новости компании, возможности для успешной карьеры')">
+        <meta name="robots" content="index,follow">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="@lang('Карьерный портал «КОИНОТИ НАВ»')">
+
+        @hasSection('meta')
+            @yield('meta')
+        @else
+            <meta name="description" content="@lang('Найдите работу своей мечты на карьерном портале «КОИНОТИ НАВ». Актуальные вакансии, резюме, работодатели и новые возможности для успешной карьеры в Таджикистане.')">
+            <meta property="og:description" content="@lang('Найдите работу своей мечты на карьерном портале «КОИНОТИ НАВ». Актуальные вакансии, резюме, работодатели и новые возможности для успешной карьеры в Таджикистане.')">
+            <meta property="og:title" content="@lang('Карьерный портал «КОИНОТИ НАВ»')">
+            <meta property="og:url" content="{{ route('pages.index') }}">
+            <meta property="og:image" content="{{ asset('images/og.svg') }}">
+            <link rel="canonical" href="{{ route('pages.index') }}">
+        @endif
 
         <title>@lang('Карьерный портал «КОИНОТИ НАВ»')</title>
 
